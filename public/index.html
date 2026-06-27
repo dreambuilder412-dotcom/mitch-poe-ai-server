@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mitchell's Bar & Grill — Apply Now</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { background: #000000; font-family: 'DM Sans', sans-serif; color: #ffffff; min-height: 100vh; }
+    .hero { background: #000000; border-bottom: 2px solid #f5c518; padding: 40px 32px 32px; text-align: center; }
+    .hero-title { font-family: 'Bebas Neue', sans-serif; font-size: 48px; letter-spacing: 5px; color: #f5c518; line-height: 1; }
+    .hero-sub { font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 4px; color: #ffffff; margin-top: 4px; }
+    .perks { display: flex; gap: 16px; justify-content: center; margin-top: 20px; flex-wrap: wrap; }
+    .perk { display: flex; align-items: center; gap: 7px; background: #111111; border: 1px solid #f5c518; border-radius: 20px; padding: 6px 16px; font-size: 13px; color: #ffffff; font-weight: 600; }
+    .form-wrap { max-width: 680px; margin: 0 auto; padding: 36px 24px 60px; background: #000000; }
+    .form-title { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 3px; color: #f5c518; margin-bottom: 24px; text-align: center; }
+    .upload-zone { border: 2px dashed #333333; border-radius: 10px; padding: 20px; text-align: center; margin-bottom: 28px; cursor: pointer; transition: all 0.3s; background: #000000; }
+    .upload-zone:hover { border-color: #f5c518; background: #111111; }
+    .upload-zone .icon { font-size: 36px; }
+    .upload-zone .uz-title { font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; color: #ffffff; margin-top: 6px; font-size: 16px; }
+    .upload-zone .uz-sub { font-size: 13px; color: #cccccc; margin-top: 4px; }
+    .upload-zone .uz-scanning { font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; color: #f5c518; margin-top: 8px; font-size: 16px; }
+    .upload-zone .spinner { font-size: 32px; display: inline-block; animation: spin 1s linear infinite; }
+    .clear-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; padding: 8px 12px; background: #111111; border-radius: 6px; border: 1px solid #333333; font-size: 12px; color: #dddddd; }
+    .clear-bar button { background: transparent; border: none; color: #cccccc; font-size: 12px; cursor: pointer; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .span2 { grid-column: span 2; }
+    .span1 { grid-column: span 1; }
+    @media(max-width: 560px) { .grid { grid-template-columns: 1fr; } .span1, .span2 { grid-column: span 1; } }
+    .field-label { display: block; font-size: 11px; color: #ffffff; letter-spacing: 1.5px; margin-bottom: 5px; font-family: 'Bebas Neue', sans-serif; }
+    .field-label-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 5px; }
+    .ai-tag { font-size: 9px; color: #00e676; letter-spacing: 1px; font-family: 'Bebas Neue', sans-serif; }
+    .ai-tag .edited { color: #ffd740; }
+    input, select, textarea { width: 100%; background: #111111; border: 1px solid #333333; color: #ffffff; border-radius: 8px; padding: 10px 14px; font-size: 14px; outline: none; font-family: 'DM Sans', sans-serif; transition: all 0.2s; }
+    input:focus, select:focus, textarea:focus { border-color: #f5c518; background: #1a1a00; }
+    input::placeholder, textarea::placeholder { color: #8888aa; }
+    select option { background: #111111; }
+    textarea { resize: none; height: 100px; }
+    .ai-chip { display: flex; align-items: center; justify-content: space-between; background: #1a1a00; border: 1px solid #f5c518; border-radius: 8px; padding: 10px 14px; cursor: text; min-height: 44px; }
+    .ai-chip-val { font-size: 14px; color: #ffffff; font-weight: 500; word-break: break-all; }
+    .ai-chip-edit { font-size: 13px; color: #ffffff; margin-left: 10px; flex-shrink: 0; opacity: 0.7; }
+    .refs-banner { background: #111111; border: 1px solid #f5c518; border-radius: 8px; padding: 14px 18px; margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
+    .refs-banner-title { font-family: 'Bebas Neue', sans-serif; font-size: 16px; letter-spacing: 2px; color: #f5c518; }
+    .refs-banner-sub { font-size: 13px; color: #eeeeee; margin-top: 2px; }
+    .ref-card { margin-bottom: 20px; padding: 18px; background: #111111; border: 1px solid #333333; border-radius: 8px; }
+    .ref-card-title { font-family: 'Bebas Neue', sans-serif; font-size: 14px; letter-spacing: 2px; color: #f5c518; margin-bottom: 14px; }
+    .ref-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media(max-width:560px){ .ref-grid { grid-template-columns: 1fr; } }
+    .ref-status { display: flex; gap: 16px; margin-bottom: 8px; font-size: 12px; }
+    .ref-ok { color: #00c853; }
+    .ref-missing { color: #c84040; }
+    .submit-btn { width: 100%; margin-top: 24px; background: #d0d0d0; color: #999; border: none; border-radius: 8px; padding: 16px; font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 3px; cursor: default; transition: all 0.2s; }
+    .submit-btn.ready { background: #f5c518; color: #000000; cursor: pointer; }
+    .footer-note { text-align: center; font-size: 12px; color: #bbbbbb; margin-top: 16px; }
+    .done-screen { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: #000000; }
+    .done-inner { text-align: center; padding: 48px; }
+    .done-icon { font-size: 72px; margin-bottom: 16px; }
+    .done-title { font-family: 'Bebas Neue', sans-serif; font-size: 42px; letter-spacing: 4px; color: #f5c518; margin-bottom: 8px; }
+    .done-sub { font-size: 18px; color: #ffffff; margin-bottom: 24px; }
+    .done-body { font-size: 15px; color: #eeeeee; max-width: 400px; margin: 0 auto; line-height: 1.7; }
+    @keyframes spin { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+  </style>
+</head>
+<body>
+
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+
+<div class="done-screen" id="doneScreen" style="display:none;">
+  <div class="done-inner">
+    <div class="done-icon">🍸</div>
+    <div class="done-title">APPLICATION RECEIVED!</div>
+    <div class="done-sub">Thank you for applying to <strong>Mitchell's Bar & Grill</strong>!</div>
+    <div class="done-body">Our team reviews every application. If you're a great fit, you'll hear back within <strong>3–5 business days</strong>.</div>
+  </div>
+</div>
+
+<div id="mainForm">
+  <div class="hero">
+    <div style="font-size:52px;margin-bottom:8px;">🍸</div>
+    <div class="hero-title">MITCHELL'S</div>
+    <div class="hero-sub">BAR & GRILL · NOW HIRING</div>
+    <div class="perks">
+      <div class="perk">🍺 Lively Atmosphere</div>
+      <div class="perk">💰 Competitive Pay</div>
+      <div class="perk">🤝 Tight-Knit Team</div>
+      <div class="perk">🌙 Night & Day Shifts</div>
+    </div>
+  </div>
+
+  <div class="form-wrap">
+    <div class="form-title">APPLY NOW</div>
+
+    <div class="upload-zone" id="uploadZone" onclick="document.getElementById('fileInput').click()">
+      <input type="file" id="fileInput" accept=".txt,.png,.jpg,.jpeg,.webp" style="display:none" onchange="handleFile(event)"/>
+      <div id="uploadDefault">
+        <div class="icon">📎</div>
+        <div class="uz-title">UPLOAD YOUR RESUME (OPTIONAL)</div>
+        <div class="uz-sub">We'll fill in your name, phone & address · Photo or screenshot</div>
+      </div>
+      <div id="uploadScanning" style="display:none">
+        <div class="spinner">⚡</div>
+        <div class="uz-scanning">READING YOUR RESUME...</div>
+        <div class="uz-sub">Filling in your info automatically</div>
+      </div>
+      <div id="uploadDone" style="display:none">
+        <div style="font-size:28px">📄</div>
+        <div style="font-size:13px;color:#00e676;margin-top:4px" id="uploadFileName"></div>
+      </div>
+    </div>
+
+    <div class="clear-bar" id="clearBar" style="display:none">
+      <span>Fields filled by AI — tap any to edit</span>
+      <button onclick="clearResume()">✕ clear</button>
+    </div>
+
+    <div class="grid">
+      <div class="span2">
+        <div class="field-label-row"><label class="field-label">FULL NAME *</label><span class="ai-tag" id="tag_name" style="display:none">⚡ AI FILLED</span></div>
+        <div class="ai-chip" id="chip_name" style="display:none" onclick="editField('name')"><span class="ai-chip-val" id="chipval_name"></span><span class="ai-chip-edit">✏</span></div>
+        <input type="text" id="name" placeholder="Your full name" oninput="checkSubmit()"/>
+      </div>
+      <div class="span1">
+        <div class="field-label-row"><label class="field-label">EMAIL ADDRESS *</label><span class="ai-tag" id="tag_email" style="display:none">⚡ AI FILLED</span></div>
+        <div class="ai-chip" id="chip_email" style="display:none" onclick="editField('email')"><span class="ai-chip-val" id="chipval_email"></span><span class="ai-chip-edit">✏</span></div>
+        <input type="email" id="email" placeholder="your@email.com" oninput="checkSubmit()"/>
+      </div>
+      <div class="span1">
+        <div class="field-label-row"><label class="field-label">PHONE NUMBER</label><span class="ai-tag" id="tag_phone" style="display:none">⚡ AI FILLED</span></div>
+        <div class="ai-chip" id="chip_phone" style="display:none" onclick="editField('phone')"><span class="ai-chip-val" id="chipval_phone"></span><span class="ai-chip-edit">✏</span></div>
+        <input type="tel" id="phone" placeholder="(412) 000-0000"/>
+      </div>
+      <div class="span2">
+        <div class="field-label-row"><label class="field-label">CITY / NEIGHBORHOOD</label><span class="ai-tag" id="tag_city" style="display:none">⚡ AI FILLED</span></div>
+        <div class="ai-chip" id="chip_city" style="display:none" onclick="editField('city')"><span class="ai-chip-val" id="chipval_city"></span><span class="ai-chip-edit">✏</span></div>
+        <input type="text" id="city" placeholder="Pittsburgh, PA"/>
+      </div>
+      <div class="span1">
+        <label class="field-label">POSITION APPLYING FOR *</label>
+        <select id="role" onchange="checkRefs();checkSubmit()">
+          <option>Server</option><option>Host</option><option>Cook</option>
+          <option>Bartender</option><option>Manager</option><option>GM</option>
+          <option>FOH Manager</option><option>Kitchen Manager</option>
+        </select>
+      </div>
+      <div class="span1">
+        <label class="field-label">AVAILABILITY</label>
+        <select id="availability">
+          <option value="">Select availability</option>
+          <option>Full-Time</option><option>Part-Time</option>
+          <option>Weekends Only</option><option>Weekdays Only</option>
+          <option>Flexible</option><option>Nights Only</option>
+        </select>
+      </div>
+      <div class="span1">
+        <div class="field-label-row"><label class="field-label">YEARS OF EXPERIENCE</label><span class="ai-tag" id="tag_yearsExperience" style="display:none">⚡ AI FILLED</span></div>
+        <div class="ai-chip" id="chip_yearsExperience" style="display:none" onclick="editField('yearsExperience')"><span class="ai-chip-val" id="chipval_yearsExperience"></span><span class="ai-chip-edit">✏</span></div>
+        <input type="text" id="yearsExperience" placeholder="e.g. 3"/>
+      </div>
+      <div class="span1">
+        <div class="field-label-row"><label class="field-label">MOST RECENT EMPLOYER</label><span class="ai-tag" id="tag_lastEmployer" style="display:none">⚡ AI FILLED</span></div>
+        <div class="ai-chip" id="chip_lastEmployer" style="display:none" onclick="editField('lastEmployer')"><span class="ai-chip-val" id="chipval_lastEmployer"></span><span class="ai-chip-edit">✏</span></div>
+        <input type="text" id="lastEmployer" placeholder="Restaurant / bar name"/>
+      </div>
+      <div class="span2">
+        <div class="field-label-row"><label class="field-label">MOST RECENT JOB TITLE</label><span class="ai-tag" id="tag_lastTitle" style="display:none">⚡ AI FILLED</span></div>
+        <div class="ai-chip" id="chip_lastTitle" style="display:none" onclick="editField('lastTitle')"><span class="ai-chip-val" id="chipval_lastTitle"></span><span class="ai-chip-edit">✏</span></div>
+        <input type="text" id="lastTitle" placeholder="e.g. Bartender"/>
+      </div>
+      <div class="span2">
+        <label class="field-label">WHY DO YOU WANT TO JOIN MITCHELL'S?</label>
+        <textarea id="whyUs" placeholder="Tell us about yourself and why you'd be a great fit..."></textarea>
+      </div>
+    </div>
+
+    <div id="refsSection" style="display:none; margin-top:32px;">
+      <div class="refs-banner">
+        <span style="font-size:24px">📋</span>
+        <div>
+          <div class="refs-banner-title">PROFESSIONAL REFERENCES REQUIRED</div>
+          <div class="refs-banner-sub">This position requires <strong>2 professional references</strong>. Name and phone required for each.</div>
+        </div>
+      </div>
+      <div class="ref-card">
+        <div class="ref-card-title">REFERENCE 1 (REQUIRED)</div>
+        <div class="ref-grid">
+          <div class="span2"><label class="field-label">FULL NAME *</label><input type="text" id="ref1_name" placeholder="Reference's full name" oninput="checkSubmit()"/></div>
+          <div><label class="field-label">JOB TITLE</label><input type="text" id="ref1_title" placeholder="e.g. Restaurant Manager"/></div>
+          <div><label class="field-label">COMPANY</label><input type="text" id="ref1_company" placeholder="Where they work"/></div>
+          <div><label class="field-label">PHONE *</label><input type="tel" id="ref1_phone" placeholder="(412) 000-0000" oninput="checkSubmit()"/></div>
+          <div><label class="field-label">EMAIL</label><input type="email" id="ref1_email" placeholder="their@email.com"/></div>
+          <div class="span2"><label class="field-label">YOUR RELATIONSHIP</label><input type="text" id="ref1_relationship" placeholder="e.g. Former Supervisor"/></div>
+        </div>
+      </div>
+      <div class="ref-card">
+        <div class="ref-card-title">REFERENCE 2 (REQUIRED)</div>
+        <div class="ref-grid">
+          <div class="span2"><label class="field-label">FULL NAME *</label><input type="text" id="ref2_name" placeholder="Reference's full name" oninput="checkSubmit()"/></div>
+          <div><label class="field-label">JOB TITLE</label><input type="text" id="ref2_title" placeholder="e.g. Restaurant Manager"/></div>
+          <div><label class="field-label">COMPANY</label><input type="text" id="ref2_company" placeholder="Where they work"/></div>
+          <div><label class="field-label">PHONE *</label><input type="tel" id="ref2_phone" placeholder="(412) 000-0000" oninput="checkSubmit()"/></div>
+          <div><label class="field-label">EMAIL</label><input type="email" id="ref2_email" placeholder="their@email.com"/></div>
+          <div class="span2"><label class="field-label">YOUR RELATIONSHIP</label><input type="text" id="ref2_relationship" placeholder="e.g. Former Supervisor"/></div>
+        </div>
+      </div>
+      <div class="ref-status" id="refStatus"></div>
+    </div>
+
+    <button class="submit-btn" id="submitBtn" onclick="submitForm()">SUBMIT APPLICATION →</button>
+    <div class="footer-note">We treat every applicant with respect. Your info is used for hiring purposes only.</div>
+  </div>
+</div>
+
+<script>
+const GOOGLE_FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSdqG9mz6Tc2RV1zs6ikADfKIFkPmn2t8FyZ9DumpJbgqiNZ8A/formResponse";
+// Resume scanning is proxied through a Netlify Function so the Anthropic API key
+// stays on the server and is never exposed in the browser.
+const AI_ENDPOINT = "/.netlify/functions/chat";
+const AI_MODEL = "claude-sonnet-4-6";
+const REFS_REQUIRED = ["GM","Manager","FOH Manager","Kitchen Manager"];
+const AI_FIELDS = ["name","email","phone","city","yearsExperience","lastEmployer","lastTitle"];
+const aiData = {};
+
+async function handleFile(e) {
+  const file = e.target.files[0]; if(!file) return;
+  document.getElementById('uploadDefault').style.display = 'none';
+  document.getElementById('uploadScanning').style.display = 'block';
+  let payload;
+  if(file.type.startsWith('image/')) {
+    const b64 = await toBase64(file);
+    payload = { type:'image', base64:b64, mediaType:file.type };
+  } else {
+    const text = await file.text();
+    payload = { type:'text', content:text };
+  }
+  try {
+    const ex = await extractFromResume(payload);
+    AI_FIELDS.forEach(k => {
+      if(ex[k] != null && ex[k] !== '') {
+        const val = String(ex[k]);
+        aiData[k] = val;
+        document.getElementById(k).value = val;
+        showChip(k, val);
+      }
+    });
+    document.getElementById('uploadScanning').style.display = 'none';
+    document.getElementById('uploadDone').style.display = 'block';
+    document.getElementById('uploadFileName').textContent = '✓ ' + file.name + ' — tap any field to edit';
+    document.getElementById('clearBar').style.display = 'flex';
+  } catch(err) {
+    document.getElementById('uploadScanning').style.display = 'none';
+    document.getElementById('uploadDefault').style.display = 'block';
+  }
+  checkSubmit();
+}
+
+function toBase64(file) {
+  return new Promise((res,rej) => { const r=new FileReader(); r.onload=()=>res(r.result.split(',')[1]); r.onerror=rej; r.readAsDataURL(file); });
+}
+
+async function extractFromResume(payload) {
+  const prompt = (payload.type==='image' ? 'Resume image attached.' : 'Resume:\n'+payload.content) +
+    '\n\nExtract ONLY raw JSON:\n{"name":null,"email":null,"phone":null,"city":null,"yearsExperience":null,"lastEmployer":null,"lastTitle":null}';
+  const msgContent = payload.type==='image'
+    ? [{type:'image',source:{type:'base64',media_type:payload.mediaType,data:payload.base64}},{type:'text',text:prompt}]
+    : prompt;
+  const res = await fetch(AI_ENDPOINT, {
+    method:'POST', headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({model:AI_MODEL,max_tokens:400,messages:[{role:'user',content:msgContent}]})
+  });
+  const data = await res.json();
+  const text = data.content?.find(b=>b.type==='text')?.text || '{}';
+  return JSON.parse(text.replace(/```json|```/g,'').trim());
+}
+
+function showChip(k, value) {
+  document.getElementById('chip_'+k).style.display='flex';
+  document.getElementById('chipval_'+k).textContent=value||'—';
+  document.getElementById(k).style.display='none';
+  document.getElementById('tag_'+k).style.display='inline';
+}
+
+function editField(k) {
+  document.getElementById('chip_'+k).style.display='none';
+  const input=document.getElementById(k);
+  input.style.display='block'; input.focus();
+  input.onblur=()=>{ if(aiData[k]){ document.getElementById('chipval_'+k).textContent=input.value||'—'; document.getElementById('chip_'+k).style.display='flex'; input.style.display='none'; }};
+}
+
+function clearResume() {
+  AI_FIELDS.forEach(k=>{ delete aiData[k]; document.getElementById('chip_'+k).style.display='none'; document.getElementById(k).style.display='block'; document.getElementById(k).value=''; document.getElementById('tag_'+k).style.display='none'; });
+  document.getElementById('uploadDefault').style.display='block';
+  document.getElementById('uploadDone').style.display='none';
+  document.getElementById('clearBar').style.display='none';
+  document.getElementById('fileInput').value='';
+  checkSubmit();
+}
+
+function checkRefs() {
+  const role=document.getElementById('role').value;
+  document.getElementById('refsSection').style.display=REFS_REQUIRED.includes(role)?'block':'none';
+  updateRefStatus();
+}
+
+function updateRefStatus() {
+  if(!REFS_REQUIRED.includes(document.getElementById('role').value)) return;
+  const r1ok=document.getElementById('ref1_name').value.trim()&&document.getElementById('ref1_phone').value.trim();
+  const r2ok=document.getElementById('ref2_name').value.trim()&&document.getElementById('ref2_phone').value.trim();
+  document.getElementById('refStatus').innerHTML=
+    `<span class="${r1ok?'ref-ok':'ref-missing'}">${r1ok?'✓':'○'} Reference 1 ${r1ok?'complete':'incomplete'}</span>
+     <span class="${r2ok?'ref-ok':'ref-missing'}">${r2ok?'✓':'○'} Reference 2 ${r2ok?'complete':'incomplete'}</span>`;
+}
+
+function checkSubmit() {
+  const name=document.getElementById('name').value.trim()||(aiData.name||'');
+  const email=document.getElementById('email').value.trim()||(aiData.email||'');
+  const role=document.getElementById('role').value;
+  const needsRefs=REFS_REQUIRED.includes(role);
+  let refsOk=!needsRefs||(document.getElementById('ref1_name').value.trim()&&document.getElementById('ref1_phone').value.trim()&&document.getElementById('ref2_name').value.trim()&&document.getElementById('ref2_phone').value.trim());
+  const btn=document.getElementById('submitBtn');
+  const ready=!!(name&&email&&refsOk);
+  btn.classList.toggle('ready',ready);
+  btn.disabled=!ready;
+  btn.textContent=needsRefs&&!refsOk?'COMPLETE REFERENCES TO SUBMIT':'SUBMIT APPLICATION →';
+}
+
+async function submitForm() {
+  const btn=document.getElementById('submitBtn');
+  if(!btn.classList.contains('ready')) return;
+  btn.textContent='SUBMITTING...'; btn.disabled=true;
+
+  const getValue=id=>document.getElementById(id).style.display==='none'?(aiData[id]||document.getElementById(id).value):document.getElementById(id).value;
+  const nameParts=getValue('name').trim().split(' ');
+
+  const form=document.createElement('form');
+  form.method='POST';
+  form.action=GOOGLE_FORM_ACTION;
+  form.target='hidden_iframe';
+  form.style.display='none';
+
+  const fields={
+    'entry.499165778': getValue('email'),
+    'entry.1000206579': nameParts[0]||'',
+    'entry.609980903': nameParts.slice(1).join(' ')||'',
+    'entry.1417621653': getValue('phone'),
+    'entry.511076197': getValue('city'),
+    'entry.1746606231': document.getElementById('role').value,
+    'entry.998618313': document.getElementById('availability').value,
+    'entry.1498135098': getValue('yearsExperience'),
+    'entry.1424661284': getValue('lastEmployer'),
+    'entry.812533439': getValue('lastTitle'),
+  };
+
+  Object.entries(fields).forEach(([name,value])=>{
+    const input=document.createElement('input');
+    input.type='hidden'; input.name=name; input.value=value||'';
+    form.appendChild(input);
+  });
+
+  document.body.appendChild(form);
+  form.submit();
+  setTimeout(()=>{ if(form.parentNode) form.parentNode.removeChild(form); },3000);
+
+  document.getElementById('mainForm').style.display='none';
+  document.getElementById('doneScreen').style.display='flex';
+}
+
+document.addEventListener('DOMContentLoaded',()=>{
+  checkSubmit();
+  ['ref1_name','ref1_phone','ref2_name','ref2_phone'].forEach(id=>{
+    const el=document.getElementById(id);
+    if(el) el.addEventListener('input',()=>{ updateRefStatus(); checkSubmit(); });
+  });
+  ['name','email'].forEach(id=>document.getElementById(id).addEventListener('input',checkSubmit));
+});
+</script>
+</body>
+</html>

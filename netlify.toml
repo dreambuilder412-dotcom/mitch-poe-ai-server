@@ -1,0 +1,14 @@
+# Netlify configuration for Mitchell's Bar & Grill application form.
+#
+# Set the secret in: Site settings → Environment variables → ANTHROPIC_API_KEY
+# (no build step needed — the form is a static page + one serverless function).
+
+[build]
+  publish = "public"
+  functions = "netlify/functions"
+
+# Friendly alias so the form can also call /chat if you prefer.
+[[redirects]]
+  from = "/chat"
+  to = "/.netlify/functions/chat"
+  status = 200

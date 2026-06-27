@@ -5,9 +5,14 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const API_KEY = 'sk-ant-api03-IJdaDR2HG699RRnB4XBNc8BRMZJL-1HZ9Y2YX7aE0RTGksaQGqa4-ke6go7iUg7H5JpgGybkU-TH8FgkdqludQ-23tUfwAA';
+// Read the key from the environment — never hardcode secrets in source.
+// Local dev:  ANTHROPIC_API_KEY=sk-... npm start
+const API_KEY = process.env.ANTHROPIC_API_KEY;
 
 app.post('/chat', async (req, res) => {
+  if (!API_KEY) {
+    return res.status(500).json({ error: 'ANTHROPIC_API_KEY is not set in the environment.' });
+  }
   try {
     const response = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
