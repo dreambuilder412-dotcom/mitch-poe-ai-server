@@ -217,6 +217,48 @@ const GOOGLE_FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSdqG9mz6Tc2
 // stays on the server and is never exposed in the browser.
 const AI_ENDPOINT = "/.netlify/functions/chat";
 const AI_MODEL = "claude-sonnet-4-6";
+// ---------------------------------------------------------------------------
+// Google Form field IDs.
+// Each UI field is mapped to the matching question's `entry.XXXX` id.
+// The first 10 are live. To ALSO capture the references + "why join" answers,
+// replace each 'entry.PASTE_ID' below with the real id for that question.
+//
+// How to get the ids (one shot for all of them):
+//   Google Form  →  top-right ⋮  →  "Get pre-filled link"
+//   →  type a dummy value into EVERY question (incl. references + why join)
+//   →  "Get link"  →  copy. The URL contains entry.XXXX=dummy for each
+//   question — paste the numbers in below, matching them by question text.
+//
+// Any field left as 'entry.PASTE_ID' is simply skipped on submit, so the form
+// keeps working while the reference questions are still being wired up.
+// ---------------------------------------------------------------------------
+const GFORM_IDS = {
+  email:           'entry.499165778',   // Email address
+  firstName:       'entry.1000206579',  // First name
+  lastName:        'entry.609980903',   // Last name
+  phone:           'entry.1417621653',  // Phone number
+  city:            'entry.511076197',   // City / neighborhood
+  role:            'entry.1746606231',  // Position applying for
+  availability:    'entry.998618313',   // Availability
+  yearsExperience: 'entry.1498135098',  // Years of experience
+  lastEmployer:    'entry.1424661284',  // Most recent employer
+  lastTitle:       'entry.812533439',   // Most recent job title
+
+  whyUs:             'entry.PASTE_ID',  // Why do you want to join Mitchell's?
+  ref1_name:         'entry.PASTE_ID',  // Reference 1 — full name
+  ref1_title:        'entry.PASTE_ID',  // Reference 1 — job title
+  ref1_company:      'entry.PASTE_ID',  // Reference 1 — company
+  ref1_phone:        'entry.PASTE_ID',  // Reference 1 — phone
+  ref1_email:        'entry.PASTE_ID',  // Reference 1 — email
+  ref1_relationship: 'entry.PASTE_ID',  // Reference 1 — your relationship
+  ref2_name:         'entry.PASTE_ID',  // Reference 2 — full name
+  ref2_title:        'entry.PASTE_ID',  // Reference 2 — job title
+  ref2_company:      'entry.PASTE_ID',  // Reference 2 — company
+  ref2_phone:        'entry.PASTE_ID',  // Reference 2 — phone
+  ref2_email:        'entry.PASTE_ID',  // Reference 2 — email
+  ref2_relationship: 'entry.PASTE_ID',  // Reference 2 — your relationship
+};
+
 const REFS_REQUIRED = ["GM","Manager","FOH Manager","Kitchen Manager"];
 const AI_FIELDS = ["name","email","phone","city","yearsExperience","lastEmployer","lastTitle"];
 const aiData = {};
@@ -330,7 +372,38 @@ async function submitForm() {
   btn.textContent='SUBMITTING...'; btn.disabled=true;
 
   const getValue=id=>document.getElementById(id).style.display==='none'?(aiData[id]||document.getElementById(id).value):document.getElementById(id).value;
+  const fieldVal=id=>{ const el=document.getElementById(id); return el?el.value:''; };
   const nameParts=getValue('name').trim().split(' ');
+  const role=document.getElementById('role').value;
+  const refsIncluded=REFS_REQUIRED.includes(role);
+
+  // The value for each key in GFORM_IDS. References are only sent when the
+  // selected role actually requires them.
+  const values={
+    email:           getValue('email'),
+    firstName:       nameParts[0]||'',
+    lastName:        nameParts.slice(1).join(' ')||'',
+    phone:           getValue('phone'),
+    city:            getValue('city'),
+    role:            role,
+    availability:    document.getElementById('availability').value,
+    yearsExperience: getValue('yearsExperience'),
+    lastEmployer:    getValue('lastEmployer'),
+    lastTitle:       getValue('lastTitle'),
+    whyUs:           fieldVal('whyUs'),
+    ref1_name:         refsIncluded?fieldVal('ref1_name'):'',
+    ref1_title:        refsIncluded?fieldVal('ref1_title'):'',
+    ref1_company:      refsIncluded?fieldVal('ref1_company'):'',
+    ref1_phone:        refsIncluded?fieldVal('ref1_phone'):'',
+    ref1_email:        refsIncluded?fieldVal('ref1_email'):'',
+    ref1_relationship: refsIncluded?fieldVal('ref1_relationship'):'',
+    ref2_name:         refsIncluded?fieldVal('ref2_name'):'',
+    ref2_title:        refsIncluded?fieldVal('ref2_title'):'',
+    ref2_company:      refsIncluded?fieldVal('ref2_company'):'',
+    ref2_phone:        refsIncluded?fieldVal('ref2_phone'):'',
+    ref2_email:        refsIncluded?fieldVal('ref2_email'):'',
+    ref2_relationship: refsIncluded?fieldVal('ref2_relationship'):'',
+  };
 
   const form=document.createElement('form');
   form.method='POST';
@@ -338,22 +411,12 @@ async function submitForm() {
   form.target='hidden_iframe';
   form.style.display='none';
 
-  const fields={
-    'entry.499165778': getValue('email'),
-    'entry.1000206579': nameParts[0]||'',
-    'entry.609980903': nameParts.slice(1).join(' ')||'',
-    'entry.1417621653': getValue('phone'),
-    'entry.511076197': getValue('city'),
-    'entry.1746606231': document.getElementById('role').value,
-    'entry.998618313': document.getElementById('availability').value,
-    'entry.1498135098': getValue('yearsExperience'),
-    'entry.1424661284': getValue('lastEmployer'),
-    'entry.812533439': getValue('lastTitle'),
-  };
-
-  Object.entries(fields).forEach(([name,value])=>{
+  // Build one hidden input per mapped field. Fields whose id is still the
+  // 'entry.PASTE_ID' placeholder are skipped so they don't post garbage.
+  Object.entries(GFORM_IDS).forEach(([key,entryId])=>{
+    if(!entryId||entryId==='entry.PASTE_ID') return;
     const input=document.createElement('input');
-    input.type='hidden'; input.name=name; input.value=value||'';
+    input.type='hidden'; input.name=entryId; input.value=values[key]||'';
     form.appendChild(input);
   });
 
