@@ -4,6 +4,14 @@
 **Goal:** Generate photorealistic 3D renderings from every angle, built to the exact
 floor plan (sheet A1-1) and styled with the branding/aesthetic of the first location.
 
+> **Status — confirmed accurate against the CAD:**
+> - ✅ Hero eye-level interior view (continuous wall banquettes + two center 45° 4-tops)
+> - ✅ Top-down bird's-eye / dollhouse cutaway (full room sequence matches sheet A1-1)
+>
+> The Master Prompt and View 5 below are the exact wording that produced those results.
+> Remaining angles to generate: storefront exterior, reverse view toward the storefront,
+> kitchen/pass, and a banquette + mural close-up.
+
 ---
 
 ## How to use this in ChatGPT
@@ -98,9 +106,21 @@ Append one of these lines to the Master Prompt each time:
    the navy brick wainscot and white shiplap), with a row of butcher-block two-top
    tables along it and navy chairs on the aisle side. No dividers, no back-to-back
    booths.
-5. **VIEW 5 — Aerial dollhouse cutaway:** Top-down 3D cutaway (roof removed) of the
-   ENTIRE floor plan, showing the front dining room, kitchen, restrooms, corridor, and
-   back-of-house storage/walk-in, all furnished — matching the uploaded plan exactly.
+5. **VIEW 5 — Aerial dollhouse / bird's-eye (PROVEN — matched the CAD exactly):**
+   "Generate a top-down bird's-eye aerial view of the SAME restaurant with the roof
+   removed (dollhouse cutaway), looking straight down so the entire floor plan is
+   visible at once. Keep all the same materials, colors, furniture, and branding. The
+   layout must match the CAD floor plan (sheet A1-1) exactly, front to back: glass
+   entrance on 8th Avenue with the HOST stand just inside; dining room with ONE
+   continuous cognac-leather banquette bench running the full length of BOTH side walls
+   (backs to the walls) and a row of butcher-block two-top tables + navy chairs along
+   each bench, plus TWO square 4-top tables on a 45° diagonal down the center; the
+   rooster mural on the front wall; semi-open kitchen behind the dining room with two
+   service stations; a corridor leading to the Men's and Women's restrooms and a dish
+   pit; and at the rear, dry storage, a walk-in cooler, stairs, and the water-heater
+   area. Long narrow space ~19'-6" wide by ~80' deep. Photorealistic, straight
+   overhead, accurate scale, all rooms furnished. Do not crop the back-of-house — the
+   walk-in cooler and storage must be visible at the rear."
 6. **VIEW 6 — Storefront exterior:** Street-level exterior of the building facade on
    8th Avenue, glass storefront, signage "The Breakfast Spot," daytime.
 7. **VIEW 7 — Kitchen / pass:** Looking from the dining room toward the semi-open
