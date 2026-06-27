@@ -220,14 +220,15 @@ const AI_MODEL = "claude-sonnet-4-6";
 // ---------------------------------------------------------------------------
 // Google Form field IDs.
 // Each UI field is mapped to the matching question's `entry.XXXX` id.
-// The first 10 are live. To ALSO capture the references + "why join" answers,
-// replace each 'entry.PASTE_ID' below with the real id for that question.
+// The 11 below (down through "whyUs") are LIVE and verified against the form.
 //
-// How to get the ids (one shot for all of them):
+// The reference fields are NOT yet captured: the Google Form currently has no
+// reference questions. To capture them, add the questions to the Google Form,
+// then get their ids via:
 //   Google Form  →  top-right ⋮  →  "Get pre-filled link"
-//   →  type a dummy value into EVERY question (incl. references + why join)
-//   →  "Get link"  →  copy. The URL contains entry.XXXX=dummy for each
-//   question — paste the numbers in below, matching them by question text.
+//   →  type a dummy value into each reference question  →  "Get link"  →  copy.
+//   The URL contains entry.XXXX=dummy for each — paste the numbers in below,
+//   matching them by question text.
 //
 // Any field left as 'entry.PASTE_ID' is simply skipped on submit, so the form
 // keeps working while the reference questions are still being wired up.
@@ -242,9 +243,9 @@ const GFORM_IDS = {
   availability:    'entry.998618313',   // Availability
   yearsExperience: 'entry.1498135098',  // Years of experience
   lastEmployer:    'entry.1424661284',  // Most recent employer
-  lastTitle:       'entry.812533439',   // Most recent job title
+  lastTitle:       'entry.2606285',     // Most recent job title
+  whyUs:           'entry.812533439',   // Why do you want to join Mitchell's?
 
-  whyUs:             'entry.PASTE_ID',  // Why do you want to join Mitchell's?
   ref1_name:         'entry.PASTE_ID',  // Reference 1 — full name
   ref1_title:        'entry.PASTE_ID',  // Reference 1 — job title
   ref1_company:      'entry.PASTE_ID',  // Reference 1 — company
