@@ -220,18 +220,12 @@ const AI_MODEL = "claude-sonnet-4-6";
 // ---------------------------------------------------------------------------
 // Google Form field IDs.
 // Each UI field is mapped to the matching question's `entry.XXXX` id.
-// The 11 below (down through "whyUs") are LIVE and verified against the form.
+// All fields below are LIVE and verified against the form's pre-filled link.
+// Reference answers are only sent for roles that require references.
 //
-// The reference fields are NOT yet captured: the Google Form currently has no
-// reference questions. To capture them, add the questions to the Google Form,
-// then get their ids via:
-//   Google Form  →  top-right ⋮  →  "Get pre-filled link"
-//   →  type a dummy value into each reference question  →  "Get link"  →  copy.
-//   The URL contains entry.XXXX=dummy for each — paste the numbers in below,
-//   matching them by question text.
-//
-// Any field left as 'entry.PASTE_ID' is simply skipped on submit, so the form
-// keeps working while the reference questions are still being wired up.
+// Any field set to 'entry.PASTE_ID' is skipped on submit. To wire a new
+// question, add it in the Google Form, grab its id from a "Get pre-filled
+// link" (⋮ menu), and drop the number in here matching it by question text.
 // ---------------------------------------------------------------------------
 const GFORM_IDS = {
   email:           'entry.499165778',   // Email address
@@ -246,18 +240,18 @@ const GFORM_IDS = {
   lastTitle:       'entry.2606285',     // Most recent job title
   whyUs:           'entry.812533439',   // Why do you want to join Mitchell's?
 
-  ref1_name:         'entry.PASTE_ID',  // Reference 1 — full name
-  ref1_title:        'entry.PASTE_ID',  // Reference 1 — job title
-  ref1_company:      'entry.PASTE_ID',  // Reference 1 — company
-  ref1_phone:        'entry.PASTE_ID',  // Reference 1 — phone
-  ref1_email:        'entry.PASTE_ID',  // Reference 1 — email
-  ref1_relationship: 'entry.PASTE_ID',  // Reference 1 — your relationship
-  ref2_name:         'entry.PASTE_ID',  // Reference 2 — full name
-  ref2_title:        'entry.PASTE_ID',  // Reference 2 — job title
-  ref2_company:      'entry.PASTE_ID',  // Reference 2 — company
-  ref2_phone:        'entry.PASTE_ID',  // Reference 2 — phone
-  ref2_email:        'entry.PASTE_ID',  // Reference 2 — email
-  ref2_relationship: 'entry.PASTE_ID',  // Reference 2 — your relationship
+  ref1_name:         'entry.879328128',   // Reference 1 — full name
+  ref1_title:        'entry.901113255',   // Reference 1 — job title
+  ref1_company:      'entry.1247549124',  // Reference 1 — company
+  ref1_phone:        'entry.558781419',   // Reference 1 — phone
+  ref1_email:        'entry.578881396',   // Reference 1 — email
+  ref1_relationship: 'entry.1934920682',  // Reference 1 — relationship
+  ref2_name:         'entry.1462307877',  // Reference 2 — full name
+  ref2_title:        'entry.507828587',   // Reference 2 — job title
+  ref2_company:      'entry.533488787',   // Reference 2 — company
+  ref2_phone:        'entry.2145820947',  // Reference 2 — phone
+  ref2_email:        'entry.1243079285',  // Reference 2 — email
+  ref2_relationship: 'entry.453940493',   // Reference 2 — relationship
 };
 
 const REFS_REQUIRED = ["GM","Manager","FOH Manager","Kitchen Manager"];
