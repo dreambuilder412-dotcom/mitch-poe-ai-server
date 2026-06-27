@@ -34,10 +34,15 @@ floor plan (sheet A1-1) and styled with the branding/aesthetic of the first loca
 > - **Storefront entry** on 8th Avenue: large glass storefront windows and glass
 >   door, dark metal framing, exterior sign reading "The Breakfast Spot."
 > - **HOST stand** (~62 SF) just inside the entry.
-> - **Main DINING ROOM / SEATING area** (~447 SF, 30 seats): cushioned
->   booth/banquette seating running along BOTH long side walls, plus freestanding
->   square 4-top tables in the center of the room (some tables set on a 45°
->   diagonal), and two-top tables along the banquettes. Aisle down the middle.
+> - **Main DINING ROOM / SEATING area** (~447 SF, 30 seats): **ONE single
+>   continuous upholstered banquette bench runs the entire length of EACH long side
+>   wall** — one long seat cushion and one long back cushion, with the backs flat
+>   against the wall (NOT individual booths, NOT back-to-back booth pods, and NO tall
+>   dividers between seats). A row of small square two-top tables is lined up along
+>   each bench, with a single navy metal chair facing each table from the aisle side.
+>   In the center of the room are two freestanding square 4-top tables set on a 45°
+>   diagonal with four navy chairs each. Wide aisle straight down the middle. Match
+>   the CAD drawing: continuous wall benches both sides, center diagonal 4-tops.
 > - Two **service stations** built into the dining area.
 > - **KITCHEN** (~316 SF) behind the dining room, semi-open.
 > - **Corridor** leading to **Men's** and **Women's restrooms**, and a **dish pit**.
@@ -56,8 +61,10 @@ floor plan (sheet A1-1) and styled with the branding/aesthetic of the first loca
 >   brick wainscot** behind banquettes.
 > - **Flooring:** light grey-brown wood-look plank tile/LVT running the length of the
 >   space.
-> - **Booths:** cognac/caramel tufted-look leather upholstery with dark navy/black
->   wood frame dividers.
+> - **Banquette benches:** cognac/caramel leather upholstery on ONE continuous
+>   wall-length bench per side wall (seat + back cushion), backs against the wall,
+>   with a dark navy/black base. NO back-to-back booths and NO tall dividers between
+>   seats — it is one long bench, like a wall banquette, not a row of booth pods.
 > - **Chairs & stools:** navy-blue powder-coated metal "Tolix"-style café chairs and
 >   bar stools.
 > - **Tables:** natural butcher-block / wood-plank tops.
@@ -86,9 +93,11 @@ Append one of these lines to the Master Prompt each time:
    café tables in foreground.
 3. **VIEW 3 — Reverse angle:** Standing at the back of the dining room near the kitchen,
    looking forward toward the bright storefront windows and entrance.
-4. **VIEW 4 — Booth detail:** Three-quarter close view of the cognac leather banquette
-   booths against the navy brick wainscot and white shiplap, with butcher-block tables
-   and navy chairs.
+4. **VIEW 4 — Banquette detail:** Three-quarter close view of the ONE continuous
+   cognac leather wall-length banquette bench (single long cushion, back flat against
+   the navy brick wainscot and white shiplap), with a row of butcher-block two-top
+   tables along it and navy chairs on the aisle side. No dividers, no back-to-back
+   booths.
 5. **VIEW 5 — Aerial dollhouse cutaway:** Top-down 3D cutaway (roof removed) of the
    ENTIRE floor plan, showing the front dining room, kitchen, restrooms, corridor, and
    back-of-house storage/walk-in, all furnished — matching the uploaded plan exactly.
@@ -109,6 +118,11 @@ Append one of these lines to the Master Prompt each time:
   as the previous image."*
 - **The floor plan is the source of truth** for room positions; the **photos are the
   source of truth** for look/feel. Keep both uploaded every time.
+- **Important — booths vs. banquette:** Location 1's photos show back-to-back booth
+  pods with tall dividers. The NEW location does NOT use those. Per the CAD drawing it
+  uses ONE continuous wall-length banquette bench on each side wall (backs to the wall,
+  tables and chairs in front). Do not copy the divided booths from the photos — use the
+  photos only for colors, materials, and branding.
 
 ---
 
