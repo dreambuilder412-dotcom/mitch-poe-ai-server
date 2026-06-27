@@ -240,6 +240,10 @@ const GFORM_IDS = {
   lastTitle:       'entry.2606285',     // Most recent job title
   whyUs:           'entry.812533439',   // Why do you want to join Mitchell's?
 
+  // Yes/No gate that routes manager applicants to the references section.
+  // Sent as "Yes" for roles that require references, "No" otherwise.
+  managerGate:     'entry.1683486030',  // Applying for a manager position?
+
   ref1_name:         'entry.879328128',   // Reference 1 — full name
   ref1_title:        'entry.901113255',   // Reference 1 — job title
   ref1_company:      'entry.1247549124',  // Reference 1 — company
@@ -386,6 +390,7 @@ async function submitForm() {
     lastEmployer:    getValue('lastEmployer'),
     lastTitle:       getValue('lastTitle'),
     whyUs:           fieldVal('whyUs'),
+    managerGate:     refsIncluded?'Yes':'No',
     ref1_name:         refsIncluded?fieldVal('ref1_name'):'',
     ref1_title:        refsIncluded?fieldVal('ref1_title'):'',
     ref1_company:      refsIncluded?fieldVal('ref1_company'):'',
