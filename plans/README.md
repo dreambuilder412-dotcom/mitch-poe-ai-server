@@ -9,6 +9,8 @@ accents, warm white trim, white oak / Cali oak tone, brass/black hardware.
 
 - **`index.html`** — the full construction package (self-contained; open in a browser).
 - **`styles.css`** — print-oriented stylesheet (US Letter, portrait).
+- **`HANDOFF.md`** — full project handoff summary (context, files, caveats, status).
+- **`CARPENTER_BRIEF.md`** — short field-facing brief for the carpenter.
 
 ## Two plan sets
 
