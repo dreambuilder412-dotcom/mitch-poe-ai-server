@@ -9,9 +9,23 @@ app.use(express.json());
 // Serve the Family House Built-In Bed Plans construction package
 app.use('/plans', express.static(path.join(__dirname, 'plans')));
 
-const API_KEY = 'sk-ant-api03-IJdaDR2HG699RRnB4XBNc8BRMZJL-1HZ9Y2YX7aE0RTGksaQGqa4-ke6go7iUg7H5JpgGybkU-TH8FgkdqludQ-23tUfwAA';
+// API key is read from the environment — never hardcode secrets in source.
+// See .env.example and the README for setup.
+const API_KEY = process.env.ANTHROPIC_API_KEY;
+
+if (!API_KEY) {
+  console.warn(
+    'WARNING: ANTHROPIC_API_KEY is not set. The /chat endpoint will return 500 ' +
+    'until it is configured. See .env.example.'
+  );
+}
 
 app.post('/chat', async (req, res) => {
+  if (!API_KEY) {
+    return res.status(500).json({
+      error: 'Server is missing ANTHROPIC_API_KEY. Set it in the environment (see .env.example).'
+    });
+  }
   try {
     const response = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
