@@ -150,4 +150,78 @@ Append one of these lines to the Master Prompt each time:
 
 - `reference/A1-1_floorplan_for_chatgpt.png` — clean, high-res crop of the Main Level
   Plan (sheet A1-1), optimized for uploading to ChatGPT.
+- `reference/E2-1_lighting_plan_for_chatgpt.png` — clean crop of the engineer's First
+  Floor Lighting Plan (sheet E2-1), for the lighting-accurate rendering below.
 - Location 1 interior photos (upload alongside): IMG_5983, IMG_5984, IMG_6009.
+
+---
+
+# LIGHTING-ACCURATE RENDERING (per engineer's plans E2-1 / E2-2)
+
+Use this when you want the render to show real light placement. Upload
+`reference/E2-1_lighting_plan_for_chatgpt.png` + the interior photos.
+
+**What the engineer specified:**
+- **Dining room:** grid of recessed 4" LED can downlights (ambient, ~2700–3000K) +
+  decorative black dome pendants over each banquette two-top and the two center 4-tops
+  (control zones Z1/Z2/Z3); **ceiling fans over the two center tables**; a
+  **daylight-dimming zone** at the storefront windows (front reads brighter/cooler).
+- **Kitchen / restrooms / dish pit / storage:** 2×2 recessed LED flat-panel troffers
+  (bright, even, ~4000K) with occupancy sensors.
+- **Safety:** red EXIT signs at front and rear + emergency lights.
+- **Exterior:** wall-mounted entry lights at the storefront.
+
+## MASTER PROMPT — lighting version (paste first)
+
+> Create a high-quality, professional 3D architectural visualization of "The Breakfast
+> Spot," 338 E. 8th Avenue, Homestead PA — built to the EXACT floor plan, with lighting
+> placed per the engineer's lighting plan (sheet E2-1). Photorealistic architectural-
+> rendering quality (V-Ray / Corona / Unreal look), physically accurate lighting,
+> correct scale.
+>
+> THE SPACE (long narrow storefront, ~19'-6" wide × ~80' deep, entrance on 8th Avenue),
+> front → back: glass storefront entry → HOST stand → DINING ROOM (one continuous
+> cognac-leather banquette bench along each side wall with butcher-block two-tops + navy
+> Tolix chairs, plus two center square 4-tops on a 45° diagonal) → semi-open KITCHEN
+> behind a divider with an expo pass → corridor with Men's & Women's restrooms → dish
+> pit → back-of-house dry storage, walk-in cooler, stairs, water heater.
+>
+> BRANDING & MATERIALS: deep navy + white + cognac leather + butcher-block wood + burnt-
+> orange accents. White shiplap walls and ceiling, navy-painted brick wainscot behind
+> the banquettes, wood-look plank floor, feature rooster "The Breakfast Spot" logo mural
+> with orange breakfast-illustration panel on the front dining wall.
+>
+> LIGHTING — place fixtures exactly per the plan (priority):
+> - Dining: even grid of recessed 4" LED can downlights (warm ambient) PLUS a row of
+>   black industrial dome pendants hung low over each banquette table and the two center
+>   4-tops.
+> - Black ceiling fans over the two center tables.
+> - Daylight zone: bright natural daylight through the storefront near the entry (front
+>   brighter/cooler than the cozy warm rear).
+> - Kitchen, restrooms, dish pit, storage: bright even 2×2 recessed LED flat panels
+>   (~4000K).
+> - Expo pass: warming-light glow at the kitchen pass.
+> - Safety: small red EXIT signs above the front entrance and rear exit.
+> - Exterior: wall-mounted entry lights flanking the storefront.
+> - Show realistic light pools, soft shadows, warm pendant glow, subtle reflections on
+>   leather and wood.
+>
+> Render quality: photorealistic, global illumination, 4K, professional interior-design
+> presentation, 16:9. Confirm layout and lighting match the uploaded plans, then render
+> the first view.
+
+## ANGLE ADD-ONS (run one per image)
+
+1. Hero eye-level from the entrance looking toward the kitchen, pendants glowing.
+2. Reverse view from the kitchen pass toward the daylit storefront.
+3. Mural wall straight-on, pendants lit over foreground tables.
+4. Reflected-ceiling / top-down dollhouse (roof removed): show the lighting layout —
+   downlight grid, pendant positions, ceiling fans, 2×2 panels in kitchen/BOH — per E2-1.
+5. Evening / ambiance shot: dusk outside, interior lights carrying the room.
+6. Kitchen pass with expo counter and warming-light glow, 2×2 panels bright behind.
+7. Storefront exterior at dusk, interior glowing through the glass, sign and entry
+   lights on.
+8. Booth/banquette detail under a single pendant — light falloff on leather and brick.
+
+Tip: generate #1 first, then add *"keep the same materials, fixtures, and lighting
+layout as the previous image"* to each later angle. Keep E2-1 + the photos uploaded.
