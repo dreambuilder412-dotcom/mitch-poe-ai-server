@@ -52,8 +52,15 @@ floor plan (sheet A1-1) and styled with the branding/aesthetic of the first loca
 >   diagonal with four navy chairs each. Wide aisle straight down the middle. Match
 >   the CAD drawing: continuous wall benches both sides, center diagonal 4-tops.
 > - Two **service stations** built into the dining area.
-> - **KITCHEN** (~316 SF) behind the dining room, semi-open.
-> - **Corridor** leading to **Men's** and **Women's restrooms**, and a **dish pit**.
+> - **KITCHEN** (~316 SF) behind the dining room. The kitchen front is a **navy-brick
+>   HALF WALL at counter height** with the **host/expo station counter on top** (rounded
+>   half-round counter end projecting toward the dining room), and the **pass-through
+>   window set BEHIND the expo station** — the stainless cook-line is glimpsed through
+>   that window, not a wide-open hole at the front. Read: half wall → expo counter →
+>   pass window → kitchen beyond.
+> - **Corridor** leading to **Men's** and **Women's restrooms** (two distinct navy-painted
+>   doors with restroom icons, set into the white shiplap corridor wall), and a
+>   **dish pit**.
 > - **Back of house**: dry storage, a walk-in cooler, stairs, and utility/
 >   water-heater area at the very rear.
 >
@@ -191,8 +198,10 @@ Use this when you want the render to show real light placement. Upload
 > THE SPACE (long narrow storefront, ~19'-6" wide × ~80' deep, entrance on 8th Avenue),
 > front → back: glass storefront entry → HOST stand → DINING ROOM (one continuous
 > cognac-leather banquette bench along each side wall with butcher-block two-tops + navy
-> Tolix chairs, plus two center square 4-tops on a 45° diagonal) → semi-open KITCHEN
-> behind a divider with an expo pass → corridor with Men's & Women's restrooms → dish
+> Tolix chairs, plus two center square 4-tops on a 45° diagonal) → KITCHEN whose front
+> is a navy-brick HALF WALL with the host/expo station counter on top (rounded half-round
+> end) and the pass-through window set BEHIND the expo (half wall → expo counter → pass
+> window → kitchen beyond) → corridor with two navy Men's & Women's restroom doors → dish
 > pit → back-of-house dry storage, walk-in cooler, stairs, water heater.
 >
 > BRANDING & MATERIALS: deep navy + white + cognac leather + butcher-block wood + burnt-
