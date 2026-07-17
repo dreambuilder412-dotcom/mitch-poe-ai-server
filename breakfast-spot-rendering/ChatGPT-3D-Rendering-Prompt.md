@@ -77,7 +77,13 @@ floor plan (sheet A1-1) and styled with the branding/aesthetic of the first loca
 >   bar stools.
 > - **Tables:** natural butcher-block / wood-plank tops.
 > - **Lighting:** black industrial dome pendant lights over tables, plus recessed
->   ceiling downlights; white shiplap ceiling.
+>   ceiling downlights set into the floating ceiling clouds.
+> - **Ceiling (IMPORTANT — NOT a shiplap vault):** exposed / open industrial ceiling —
+>   open to the structure above with exposed matte-black painted deck, joists, spiral
+>   HVAC ductwork, conduit and sprinkler lines, PLUS flat **floating "cloud" drop-ceiling
+>   panels** suspended low over the dining area (set off the walls so the exposed
+>   structure shows around their edges). Pendants and ceiling fans hang on rods from the
+>   exposed structure. Do NOT use a white shiplap barrel/vaulted ceiling.
 > - **Mood:** bright, clean, modern-rustic breakfast cafe, daytime natural light
 >   pouring in from the storefront.
 >
@@ -170,6 +176,9 @@ Use this when you want the render to show real light placement. Upload
   (bright, even, ~4000K) with occupancy sensors.
 - **Safety:** red EXIT signs at front and rear + emergency lights.
 - **Exterior:** wall-mounted entry lights at the storefront.
+- **Ceiling:** exposed/open industrial ceiling (matte-black deck + spiral ductwork +
+  conduit) with flat floating "cloud" drop-ceiling panels — cans set into the clouds,
+  pendants/fans hung from the exposed structure. NOT a white shiplap barrel vault.
 
 ## MASTER PROMPT — lighting version (paste first)
 
@@ -187,9 +196,12 @@ Use this when you want the render to show real light placement. Upload
 > pit → back-of-house dry storage, walk-in cooler, stairs, water heater.
 >
 > BRANDING & MATERIALS: deep navy + white + cognac leather + butcher-block wood + burnt-
-> orange accents. White shiplap walls and ceiling, navy-painted brick wainscot behind
-> the banquettes, wood-look plank floor, feature rooster "The Breakfast Spot" logo mural
-> with orange breakfast-illustration panel on the front dining wall.
+> orange accents. White shiplap walls with a navy-painted brick wainscot behind the
+> banquettes, wood-look plank floor, feature rooster "The Breakfast Spot" logo mural
+> with orange breakfast-illustration panel on the front dining wall. CEILING is an
+> exposed / open industrial ceiling — open to the structure with exposed matte-black
+> deck, joists, spiral HVAC ductwork, conduit and sprinkler lines, PLUS flat floating
+> "cloud" drop-ceiling panels suspended low over the dining area (NOT a shiplap vault).
 >
 > LIGHTING — place fixtures exactly per the plan (priority):
 > - Dining: even grid of recessed 4" LED can downlights (warm ambient) PLUS a row of
