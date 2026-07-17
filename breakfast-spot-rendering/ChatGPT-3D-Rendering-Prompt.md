@@ -51,7 +51,10 @@ floor plan (sheet A1-1) and styled with the branding/aesthetic of the first loca
 >   In the center of the room are two freestanding square 4-top tables set on a 45°
 >   diagonal with four navy chairs each. Wide aisle straight down the middle. Match
 >   the CAD drawing: continuous wall benches both sides, center diagonal 4-tops.
-> - Two **service stations** built into the dining area.
+> - Two **built-in service stations** at the back of the dining room flanking the
+>   kitchen-pass area — navy base with stone/butcher-block top: one near the **restroom
+>   doors** (~35 SF) holding a coffee/water/drink service setup (brewer, pitchers, cups,
+>   napkins), and a second (~50 SF) on the kitchen side. Low and built-in, not seating.
 > - **KITCHEN** (~316 SF) behind the dining room. The kitchen front is a **navy-brick
 >   HALF WALL at counter height** with the **host/expo station counter on top** (rounded
 >   half-round counter end projecting toward the dining room), and the **pass-through
