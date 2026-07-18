@@ -55,12 +55,15 @@ floor plan (sheet A1-1) and styled with the branding/aesthetic of the first loca
 >   kitchen-pass area — navy base with stone/butcher-block top: one near the **restroom
 >   doors** (~35 SF) holding a coffee/water/drink service setup (brewer, pitchers, cups,
 >   napkins), and a second (~50 SF) on the kitchen side. Low and built-in, not seating.
-> - **KITCHEN** (~316 SF) behind the dining room. The kitchen front is a **navy-brick
->   HALF WALL at counter height** with the **host/expo station counter on top** (rounded
->   half-round counter end projecting toward the dining room), and the **pass-through
->   window set BEHIND the expo station** — the stainless cook-line is glimpsed through
->   that window, not a wide-open hole at the front. Read: half wall → expo counter →
->   pass window → kitchen beyond.
+> - **KITCHEN** (~316 SF) with a pass built in THREE distinct zones front-to-back:
+>   (1) a **navy-brick HALF WALL at counter height** facing the dining room with a
+>   stainless/butcher-block cap and rounded half-round end; (2) a distinct **~50 SF
+>   server/expo station** behind the half wall — a standing work zone with a full
+>   stainless expo counter, plate stacks, coffee/service setup, and overhead heat lamps;
+>   (3) a **defined hot pass-through window BEHIND the expo station** with two stacked
+>   stainless heated warming shelves where cooks slide plates, the cook-line and hood
+>   glimpsed through it (a contained window, NOT the whole kitchen wall open). Read:
+>   dining → half wall → 50 SF expo station → hot pass window → cook-line beyond.
 > - **Corridor** leading to **Men's** and **Women's restrooms** (two distinct navy-painted
 >   doors with restroom icons, set into the white shiplap corridor wall), and a
 >   **dish pit**.
@@ -203,8 +206,10 @@ Use this when you want the render to show real light placement. Upload
 > cognac-leather banquette bench along each side wall with butcher-block two-tops + navy
 > Tolix chairs, plus two center square 4-tops on a 45° diagonal) → KITCHEN whose front
 > is a navy-brick HALF WALL with the host/expo station counter on top (rounded half-round
-> end) and the pass-through window set BEHIND the expo (half wall → expo counter → pass
-> window → kitchen beyond) → corridor with two navy Men's & Women's restroom doors → dish
+> end), a distinct ~50 SF server/expo standing station behind it (stainless expo counter,
+> plate stacks, heat lamps), and a defined hot pass-through window with two heated warming
+> shelves behind that (half wall → 50 SF expo station → hot pass window → cook-line beyond)
+> → corridor with two navy Men's & Women's restroom doors → dish
 > pit → back-of-house dry storage, walk-in cooler, stairs, water heater.
 >
 > BRANDING & MATERIALS: deep navy + white + cognac leather + butcher-block wood + burnt-
