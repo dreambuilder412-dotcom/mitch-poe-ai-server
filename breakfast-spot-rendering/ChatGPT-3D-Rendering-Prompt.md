@@ -41,7 +41,10 @@ floor plan (sheet A1-1) and styled with the branding/aesthetic of the first loca
 > Front-to-back sequence:
 > - **Storefront entry** on 8th Avenue: large glass storefront windows and glass
 >   door, dark metal framing, exterior sign reading "The Breakfast Spot."
-> - **HOST stand** (~62 SF) just inside the entry.
+> - **HOST / ENTRY area** (~62 SF) just inside the storefront doors: a short
+>   cognac-leather banquette bench against EACH side wall flanking the entrance (one
+>   left, one right, ~8 ft each), with the **navy host podium centered between them**
+>   (rooster logo on the front, POS tablet on top). Symmetrical greeting area.
 > - **Main DINING ROOM / SEATING area** (~447 SF, 30 seats): **ONE single
 >   continuous upholstered banquette bench runs the entire length of EACH long side
 >   wall** — one long seat cushion and one long back cushion, with the backs flat
@@ -202,7 +205,8 @@ Use this when you want the render to show real light placement. Upload
 > correct scale.
 >
 > THE SPACE (long narrow storefront, ~19'-6" wide × ~80' deep, entrance on 8th Avenue),
-> front → back: glass storefront entry → HOST stand → DINING ROOM (one continuous
+> front → back: glass storefront entry with a short cognac banquette bench on BOTH side
+> walls flanking the door and the navy host podium centered between them → DINING ROOM (one continuous
 > cognac-leather banquette bench along each side wall with butcher-block two-tops + navy
 > Tolix chairs, plus two center square 4-tops on a 45° diagonal) → KITCHEN whose front
 > is a navy-brick HALF WALL with the host/expo station counter on top (rounded half-round
